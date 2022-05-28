@@ -15,7 +15,7 @@ namespace practice_task
             suit = pSuit;
             value = pValue;
         }
-        
+       
         public List<Deck> getDeckOfCards()
         {
             return deckOfCards;
