@@ -55,16 +55,16 @@ namespace practice_task
 
                     //Deal new hand
                     case "3":
-                    if(deckOfCards.deckOfCards.Count >= 5)
-                    {
-                        hand = dealToHand(deckOfCards);
-                        Console.WriteLine("Hand successfully dealt");
-                    } else
-                    {
-                        Console.WriteLine("There are fewer than 5 cards remaining in the deck.");
-                    }
-                    Console.WriteLine($"\nPress enter to continue.\n\n{lineSeparator}");
-                    while (Console.ReadKey().Key != ConsoleKey.Enter){}
+                        if(deckOfCards.deckOfCards.Count >= 5)
+                        {
+                            hand = dealToHand(deckOfCards);
+                            Console.WriteLine("Hand successfully dealt");
+                        } else
+                        {
+                            Console.WriteLine("There are fewer than 5 cards remaining in the deck.");
+                        }
+                        Console.WriteLine($"\nPress enter to continue.\n\n{lineSeparator}");
+                        while (Console.ReadKey().Key != ConsoleKey.Enter){}
                     break;
 
                     //Display hand total points
