@@ -32,6 +32,14 @@ namespace practice_task
                 c += 3;
             }
 
+            for(int i = 0; i < 13; i++)
+            {
+                foreach(Card h in deckOfCards.deckOfCards)
+                {
+                    Console.WriteLine(h.name);
+                }
+            }
+
             while(menuSelection != "5")
             {
                 Console.Write(menu);

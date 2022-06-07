@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace practice_task
 {
-    class Deck
+    public class Deck
     {
         public List<Card> deckOfCards = new List<Card>();
         public Deck()
