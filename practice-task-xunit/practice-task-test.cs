@@ -117,8 +117,9 @@ namespace practice_task_xunit
         [InlineData(1, 1, 1, 1, 1, 5)]
         public void PointsValueTest(int value1, int value2, int value3, int value4, int value5, int expected)
         {
-            Hand hand = new Hand(value1, value2, value3, value4, value5);
-            int result = hand.PointsValue();
+            Deck p = new Deck();
+            Hand hand = new Hand(p);
+            var result = hand.PointsValue();
             Assert.Equal(result, expected);
         }
     } 
