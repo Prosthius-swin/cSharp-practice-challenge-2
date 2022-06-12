@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace practice_task
 {
-    class Hand
+    public class Hand
     {
         public static int counter { get; set; }
         public List<Card> hand = new List<Card>();
