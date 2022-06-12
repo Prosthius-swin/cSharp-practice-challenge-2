@@ -11,12 +11,10 @@ namespace practice_task
         { 
             if(counter == 1)
             {
-                Random rnd = new Random();
                 for(int i = 0; i < 5; i++)
                 {
-                    int cardAddToHand = rnd.Next(0, deck.deckOfCards.Count);
-                    hand.Add(new Card(deck.deckOfCards[cardAddToHand].name, deck.deckOfCards[cardAddToHand].suit, deck.deckOfCards[cardAddToHand].value));
-                    deck.deckOfCards.RemoveAt(cardAddToHand);
+                    hand.Add(new Card(deck.deckOfCards[0].name, deck.deckOfCards[0].suit, deck.deckOfCards[0].value));
+                    deck.deckOfCards.RemoveAt(0);
                 }
             } else
             {

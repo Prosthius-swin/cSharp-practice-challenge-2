@@ -59,10 +59,16 @@ namespace practice_task
 
                     //Deal new hand
                     case "3":
+                        Console.WriteLine();
                         if(deckOfCards.deckOfCards.Count >= 5)
                         {
-                            hand = Hand.dealToHand(deckOfCards);
-                            Console.WriteLine("Hand successfully dealt");
+                            hand = new Hand(deckOfCards);
+                            int handCounter = hand.hand.Count;
+
+                            for (int i = 0; i < handCounter; i++)
+                            {
+                                Console.WriteLine($"{hand.hand[i].name}, {hand.hand[i].suit}, {hand.hand[i].value}");
+                            }
                         } else
                         {
                             Console.WriteLine("There are fewer than 5 cards remaining in the deck.");
