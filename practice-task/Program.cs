@@ -49,10 +49,6 @@ namespace practice_task
                     //Shuffle deck
                     case "2":
                         Deck.shuffle(deckOfCards);
-                        foreach(Card h in deckOfCards.deckOfCards)
-                        {
-                            Console.WriteLine(h.suit);
-                        }
                         Console.WriteLine($"The deck was successfully shuffled\n\nPress enter to continue.\n\n{lineSeparator}");
                         while (Console.ReadKey().Key != ConsoleKey.Enter){}
                     break;
