@@ -110,7 +110,30 @@ namespace practice_task_xunit
         [Fact]
         public void DealTest()
         {
+            Deck dealTestDeck = new Deck();
+            Deck deckTopSix = new Deck();
+            deckTopSix.deckOfCards.Clear();
+            for(int i = 0; i < 6; i++)
+            {
+                deckTopSix.deckOfCards.Add(new Card(dealTestDeck.deckOfCards[i].suit, dealTestDeck.deckOfCards[i].name, dealTestDeck.deckOfCards[i].value));
+            }
+            
+            Hand dealTestHand = new Hand(dealTestDeck);
+            List<Card> dealTestHandCard = new List<Card>();
+            for(int i = 0; i < 5; i++)
+            {
+                dealTestHandCard.Add(new Card(dealTestHand.hand[i].suit, dealTestHand.hand[i].name, dealTestHand.hand[i].value));
+            }
 
+            for(int i = 0; i < 5; i++)
+            {
+                Assert.Equal(deckTopSix.deckOfCards[i].suit, dealTestHand.hand[i].suit);
+                Assert.Equal(deckTopSix.deckOfCards[i].name, dealTestHand.hand[i].name);
+                Assert.Equal(deckTopSix.deckOfCards[i].value, dealTestHand.hand[i].value);
+            }
+            Assert.Equal(deckTopSix.deckOfCards[5].suit, dealTestDeck.deckOfCards[0].suit);
+            Assert.Equal(deckTopSix.deckOfCards[5].name, dealTestDeck.deckOfCards[0].name);
+            Assert.Equal(deckTopSix.deckOfCards[5].value, dealTestDeck.deckOfCards[0].value);
         }
     }
 
