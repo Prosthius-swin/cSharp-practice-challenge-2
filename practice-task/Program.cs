@@ -3,7 +3,7 @@ using System.IO;
 
 namespace practice_task
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -61,7 +61,7 @@ namespace practice_task
                     case "3":
                         if(deckOfCards.deckOfCards.Count >= 5)
                         {
-                            hand = dealToHand(deckOfCards);
+                            hand = Hand.dealToHand(deckOfCards);
                             Console.WriteLine("Hand successfully dealt");
                         } else
                         {
@@ -93,6 +93,5 @@ namespace practice_task
                 }
             }
         }
-        static Hand dealToHand(Deck cardDeck) => new Hand(cardDeck);
     }
 }

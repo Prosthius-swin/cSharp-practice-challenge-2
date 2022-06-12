@@ -34,5 +34,7 @@ namespace practice_task
             return handPointsValue;
         }
         public static int CounterPlusOne() => counter;
+
+        public static Hand dealToHand(Deck cardDeck) => new Hand(cardDeck);
     }
 }
