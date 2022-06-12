@@ -13,7 +13,7 @@ namespace practice_task
             {
                 for(int i = 0; i < 5; i++)
                 {
-                    hand.Add(new Card(deck.deckOfCards[0].name, deck.deckOfCards[0].suit, deck.deckOfCards[0].value));
+                    hand.Add(new Card(deck.deckOfCards[0].suit, deck.deckOfCards[0].name, deck.deckOfCards[0].value));
                     deck.deckOfCards.RemoveAt(0);
                 }
             } else
