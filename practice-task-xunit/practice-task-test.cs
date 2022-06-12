@@ -95,16 +95,32 @@ namespace practice_task_xunit
         [Fact]
         public void ShuffleTest()
         {
-            Deck d = new Deck();
+            Deck notShuffled = new Deck();
             Deck shuffled = new Deck();
+            List<string> notShuffledString = new List<string>();
+            List<string> shuffledString = new List<string>();
+
             Deck.shuffle(shuffled);
-            Assert.NotEqual(d, shuffled);
+            for(int i = 0; i < 52; i++)
+            {
+                notShuffledString.Add($"{notShuffled.deckOfCards[i].suit}, {notShuffled.deckOfCards[i].name}, {notShuffled.deckOfCards[i].value}");
+                shuffledString.Add($"{shuffled.deckOfCards[i].suit}, {shuffled.deckOfCards[i].name}, {shuffled.deckOfCards[i].value}");
+            }
+            Assert.NotEqual(notShuffledString, shuffledString);
 
             Deck one = new Deck();
             Deck two = new Deck();
+            List<string> oneString = new List<string>();
+            List<string> twoString = new List<string>();
+            
             Deck.shuffle(one);
-            Deck.shuffle(two);
-            Assert.NotEqual(one, two);
+            Deck.shuffle(two);            
+            for(int i = 0; i < 52; i++)
+            {
+                oneString.Add($"{one.deckOfCards[i].suit}, {one.deckOfCards[i].name}, {one.deckOfCards[i].value}");
+                twoString.Add($"{two.deckOfCards[i].suit}, {two.deckOfCards[i].name}, {two.deckOfCards[i].value}");
+            }
+            Assert.NotEqual(oneString, twoString);
         }
 
         [Fact]
