@@ -27,7 +27,7 @@ namespace practice_task
         public int PointsValue()
         {
             int handPointsValue = 0;
-            foreach(Card i in ListHand()) 
+            foreach(Card i in hand) 
             {
                 handPointsValue += i.value;
             }

@@ -110,22 +110,30 @@ namespace practice_task_xunit
         [Fact]
         public void DealTest()
         {
-            Deck p = new Deck();
-            Hand hand = new Hand(p);
-            //hand = Program.dealToHand(p);
-            hand = Hand.dealToHand(p);
-            Assert.Equal(5, hand.hand.Count);
-        }
 
-        /*[Theory]
-        [InlineData(1, 1, 1, 1, 1, 5)]
+        }
+    }
+
+    public class HandTest
+    {
+        [Theory]
+        [InlineData(1, 1, 1, 1, 2, 6)]
+        [InlineData(1, 2, 3, 4, 5, 15)]
+        [InlineData(2, 2, 2, 2, 13, 21)]
         public void PointsValueTest(int value1, int value2, int value3, int value4, int value5, int expected)
         {
             Deck p = new Deck();
-            Hand hand = new Hand(p);
-            Assert.Equal(5, hand.hand.Count);
-            int result = hand.PointsValue();
-            //Assert.Equal(expected, result);
-        }*/
+            Hand testHand = new Hand(p);
+            testHand.hand.Clear();
+
+            testHand.hand.Add(new Card("Hearts", "test", value1));
+            testHand.hand.Add(new Card("Hearts", "test", value2));
+            testHand.hand.Add(new Card("Hearts", "test", value3));
+            testHand.hand.Add(new Card("Hearts", "test", value4));
+            testHand.hand.Add(new Card("Hearts", "test", value5));            
+
+            int result = testHand.PointsValue();
+            Assert.Equal(expected, result);
+        }
     } 
 }

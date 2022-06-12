@@ -9,6 +9,33 @@ namespace practice_task
         public List<Card> deckOfCards = new List<Card>();
         public Deck()
         {
+            for (int i = 1; i <= 13; i++)
+            {
+                deckOfCards.Add(new Card("Hearts", CardDictionary()[i], i));
+            }
+            for (int i = 1; i <= 13; i++)
+            {
+                deckOfCards.Add(new Card("Diamonds", CardDictionary()[i], i));
+            }
+            for (int i = 1; i <= 13; i++)
+            {
+                deckOfCards.Add(new Card("Spades", CardDictionary()[i], i));
+            }
+            for (int i = 1; i <= 13; i++)
+            {
+                deckOfCards.Add(new Card("Clubs", CardDictionary()[i], i));
+            }
+        }
+        public List<Card> ListRemainingCards() => deckOfCards;
+        public static Deck shuffle(Deck deck)
+        {
+            Random rnd = new Random();
+            deck.deckOfCards = deck.deckOfCards.OrderBy(x => rnd.Next()).ToList();
+            return deck;
+        }
+
+        public Dictionary<int, string> CardDictionary()
+        {
             Dictionary<int, string> cardDict = new Dictionary<int, string>()
             {
                 {1, "Ace"},
@@ -25,29 +52,7 @@ namespace practice_task
                 {12, "Queen"},
                 {13, "King"}
             };
-            for (int i = 1; i <= 13; i++)
-            {
-                deckOfCards.Add(new Card("Hearts", cardDict[i], i));
-            }
-            for (int i = 1; i <= 13; i++)
-            {
-                deckOfCards.Add(new Card("Diamonds", cardDict[i], i));
-            }
-            for (int i = 1; i <= 13; i++)
-            {
-                deckOfCards.Add(new Card("Spades", cardDict[i], i));
-            }
-            for (int i = 1; i <= 13; i++)
-            {
-                deckOfCards.Add(new Card("Clubs", cardDict[i], i));
-            }
-        }
-        public List<Card> ListRemainingCards() => deckOfCards;
-        public static Deck shuffle(Deck deck)
-        {
-            Random rnd = new Random();
-            deck.deckOfCards = deck.deckOfCards.OrderBy(x => rnd.Next()).ToList();
-            return deck;
+            return cardDict;
         }
     }
 }
