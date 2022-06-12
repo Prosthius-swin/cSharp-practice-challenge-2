@@ -73,7 +73,8 @@ namespace practice_task
 
                     //Display hand total points
                     case "4":
-                        hand.PointsValue();
+                        int handPointsValue = hand.PointsValue();
+                        Console.WriteLine($"The total value of the hand is {handPointsValue}.");
                         Console.WriteLine($"\n\nPress enter to continue.\n\n{lineSeparator}");
                         while (Console.ReadKey().Key != ConsoleKey.Enter){}
                     break;

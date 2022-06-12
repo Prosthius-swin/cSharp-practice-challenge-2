@@ -24,14 +24,14 @@ namespace practice_task
             }
         }
         public List<Card> ListHand() => hand;
-        public void PointsValue()
+        public int PointsValue()
         {
             int handPointsValue = 0;
             foreach(Card i in ListHand()) 
             {
                 handPointsValue += i.value;
             }
-            Console.WriteLine($"The total value of the hand is {handPointsValue}.");
+            return handPointsValue;
         }
         public static int CounterPlusOne() => counter;
     }
